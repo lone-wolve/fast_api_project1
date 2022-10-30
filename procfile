@@ -1,0 +1,7 @@
+from fastapi import FastAPI
+
+app = FastAPI
+
+@app.get("/")
+def root():
+    return {'slackUsername': 'lonewolve', 'backend':True, 'age':24, 'info':'My name is adbul muizz ikumapayi an aspiring backend developer'}
