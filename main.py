@@ -3,18 +3,14 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 app = FastAPI()
 
-origins = [
-    "http://localhost:8000/"
-    "http://127.0.0.1:8000"
-
-]
+origins = ["*"]
 
 app.add_middleware(
     CORSMiddleware,
-    access_control_allow_origins=origins,
-    access_control_allow_credentials=True,
-    access_control_allow_methods=["GET"],
-    access_control_allow_headers=["*"],
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 @app.get("/")
