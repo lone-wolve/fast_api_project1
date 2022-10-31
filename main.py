@@ -1,15 +1,13 @@
 from typing import Union
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-
+app = FastAPI()
 
 origins = [
-    "https://aboutme-24.herokuapp.com/"
     "http://localhost:8000/"
     "http://127.0.0.1:8000"
 
 ]
-app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
